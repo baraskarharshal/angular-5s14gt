@@ -1,0 +1,30 @@
+
+<div class="row">
+
+  <div class="col-md-8 main-panel">
+    <form [formGroup]='form'>
+      <ng-select [items]="contriesList"
+          (change)="onSelect($event)" 
+          [clearable]="false"
+          bindLabel="name" 
+          formControlName="contry"
+          placeholder="Select a Country">
+      </ng-select>
+    </form>
+
+    <div class="mt-4" *ngIf="selected">
+      <p>Selected:</p>
+      <p *ngFor="let item of selected | keyvalue">
+        {{item.key}} : {{item.value}}
+      </p>
+    </div>
+
+  </div>
+
+  <div class="col-md-4 info-panel">
+    <ul>
+      <li class="text-primary">This is a simple ng-select.
+    </ul>
+  </div>
+
+</div>
