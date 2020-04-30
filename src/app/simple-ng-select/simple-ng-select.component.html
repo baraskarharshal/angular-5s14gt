@@ -3,12 +3,14 @@
 
   <div class="col-md-8 main-panel">
     <form [formGroup]='form'>
+      <span>Select Contry: </span>
       <ng-select [items]="contriesList"
           (change)="onSelect($event)" 
           [clearable]="false"
           bindLabel="name" 
           formControlName="contry"
-          placeholder="Select a Country">
+          placeholder="Select a Country"
+          class="w-75">
       </ng-select>
     </form>
 
@@ -21,7 +23,8 @@
 
   </div>
 
-  <div class="col-md-4 info-panel">
+  <div class="col-md-4 info-panel bg-light p-0">
+    <p class="m-2">Key Points</p>
     <ul>
       <li class="text-primary">This is a simple ng-select.
     </ul>
