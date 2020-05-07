@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { SimpleNgSelectComponent } from './simple-ng-select/simple-ng-select.component';
-import { LazyLoadingComponent } from './lazy-loading/lazy-loading.component';
-import { CustomTemplateComponent } from './custom-template/custom-template.component';
+import { SimpleNgSelectComponent } from './features/ng-select_/simple-ng-select/simple-ng-select.component';
+import { LazyLoadingComponent } from './features/ng-select_/lazy-loading/lazy-loading.component';
+import { CustomTemplateComponent } from './features/ng-select_/custom-template/custom-template.component';
 
 const routes: Routes = [
 

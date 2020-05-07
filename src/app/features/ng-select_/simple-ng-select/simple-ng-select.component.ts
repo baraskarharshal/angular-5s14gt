@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { contries } from '../contries.config';
+import { contries } from '../../../contries.config';
 
 @Component({
   selector: "app-simple-ng-select",
