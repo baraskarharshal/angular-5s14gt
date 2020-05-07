@@ -1,0 +1,52 @@
+
+<div class="row">
+
+  <div class="col-md-8 main-panel">
+    <form [formGroup]='form'>
+
+      <span>Select Contry Object: </span>
+      <ng-select [items]="contriesList"
+          (change)="onSelect($event)" 
+          [clearable]="false"
+          bindLabel="name"
+          formControlName="contry"
+          placeholder="Select a Country"
+          class="w-75">
+          <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div>
+                  > {{item.name}}
+              </div>
+          </ng-template>
+      </ng-select>
+      <p>Selected : {{this.form.getRawValue().contry | json}}</p>
+
+      <span>Select Contry Object: (India is hidden here.) </span>
+      <ng-select [items]="contriesList"
+          (change)="onSelect($event)" 
+          [clearable]="false"
+          bindLabel="name"
+          formControlName="contry2"
+          placeholder="Select a Country"
+          class="w-75">
+          <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div *ngIf="item.name !== 'India'">
+                  > {{item.name}}
+              </div>
+          </ng-template>
+      </ng-select>
+      <p>Selected : {{this.form.getRawValue().contry2 | json}}</p>
+
+    </form>
+
+  </div>
+
+  <div class="col-md-4 info-panel bg-light p-0">
+    <p class="m-2">Key Points</p>
+    <ul>
+      <li class="text-primary mb-1">Change the appearance of options using custom templates.
+      <li class="text-primary mb-1">User can also control the visibility of certain options based on condition.
+
+    </ul>
+  </div>
+
+</div>

@@ -10,10 +10,11 @@ import { AppRoutingModule } from './app.routing.module';
 import { SimpleNgSelectComponent } from './simple-ng-select/simple-ng-select.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LazyLoadingComponent } from './lazy-loading/lazy-loading.component';
+import { CustomTemplateComponent } from './custom-template/custom-template.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgSelectModule, ReactiveFormsModule, AppRoutingModule ],
-  declarations: [ AppComponent, HelloComponent, SimpleNgSelectComponent, SidebarComponent, LazyLoadingComponent ],
+  declarations: [ AppComponent, HelloComponent, SimpleNgSelectComponent, SidebarComponent, LazyLoadingComponent, CustomTemplateComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

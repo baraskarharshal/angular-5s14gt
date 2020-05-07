@@ -27,6 +27,19 @@
       </ng-select>
       <p>Selected : {{this.form.getRawValue().contryId}}</p>
 
+      <span>Select one or more Contries: </span>
+      <ng-select [items]="contriesList"
+          (change)="onSelect($event)" 
+          [clearable]="false"
+          bindLabel="name" 
+          bindValue="number" 
+          formControlName="contries"
+          placeholder="Select a one or more contries"
+          multiple="true"
+          class="w-75">
+      </ng-select>
+      <p>Selected : {{this.form.getRawValue().contries}}</p>
+
 
     </form>
 
@@ -39,7 +52,7 @@
       <li class="text-primary mb-1">Use appendTo="body" when dropdown is hiding behind.
       <li class="text-primary mb-1">User bindValue="propertyName" to get value of specific property from selected object. If bindValue is not used then by default complete object is selected.
       <li class="text-primary mb-1">Autocomplete is on by default.
-
+      <li class="text-primary mb-1">Use multiple="true" to allow multiple selection.
     </ul>
   </div>
 
