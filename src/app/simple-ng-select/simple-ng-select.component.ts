@@ -10,17 +10,16 @@ import { contries } from '../contries.config';
 export class SimpleNgSelectComponent {
   form: FormGroup;
   contriesList = contries;
-  selected: any;
 
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
-      contry: [null]
+      contry: [null],
+      contryId: [null],
     });
   }
 
   onSelect(event) {
     console.log(event);
-    this.selected = event;
   }
 
 }

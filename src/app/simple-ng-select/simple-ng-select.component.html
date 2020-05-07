@@ -3,7 +3,8 @@
 
   <div class="col-md-8 main-panel">
     <form [formGroup]='form'>
-      <span>Select Contry: </span>
+
+      <span>Select Contry Object: </span>
       <ng-select [items]="contriesList"
           (change)="onSelect($event)" 
           [clearable]="false"
@@ -12,21 +13,33 @@
           placeholder="Select a Country"
           class="w-75">
       </ng-select>
-    </form>
+      <p>Selected : {{this.form.getRawValue().contry | json}}</p>
 
-    <div class="mt-4" *ngIf="selected">
-      <p>Selected:</p>
-      <p *ngFor="let item of selected | keyvalue">
-        {{item.key}} : {{item.value}}
-      </p>
-    </div>
+      <span>Select Contry Id: </span>
+      <ng-select [items]="contriesList"
+          (change)="onSelect($event)" 
+          [clearable]="false"
+          bindLabel="name" 
+          bindValue="number" 
+          formControlName="contryId"
+          placeholder="Select a Country Id"
+          class="w-75">
+      </ng-select>
+      <p>Selected : {{this.form.getRawValue().contryId}}</p>
+
+
+    </form>
 
   </div>
 
   <div class="col-md-4 info-panel bg-light p-0">
     <p class="m-2">Key Points</p>
     <ul>
-      <li class="text-primary">This is a simple ng-select.
+      <li class="text-primary mb-1">Default value of formcontrol should be null to make placeholder visble.
+      <li class="text-primary mb-1">Use appendTo="body" when dropdown is hiding behind.
+      <li class="text-primary mb-1">User bindValue="propertyName" to get value of specific property from selected object. If bindValue is not used then by default complete object is selected.
+      <li class="text-primary mb-1">Autocomplete is on by default.
+
     </ul>
   </div>
 
